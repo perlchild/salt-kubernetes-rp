@@ -3,17 +3,17 @@ base:
     - base
     - debian-auto-upgrades
     - salt-helpers
-    - baseinstall
+#   - baseinstall
 {% if 'minion' in salt['pillar.get']('kube_nodes:' ~ grains['host'] ~ ':type') %}
-    - minioninstall
+#    - minioninstall
 {% elif 'master' in salt['pillar.get']('kube_nodes:' ~ grains['host'] ~ ':type') %}
-    - masterinstall
-    - pods
+#    - masterinstall
+#    - pods
 {% endif %}
 {% if grains.get('cloud') == 'aws' %}
     - ntp
 {% endif %}
-  'roles:kubernetes-pool':
+  'G@roles:kubernetes-pool or G@roles:minion':
     - match: grain
     - docker
     - helpers
