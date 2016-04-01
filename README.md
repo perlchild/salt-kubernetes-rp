@@ -1,3 +1,13 @@
+#Hackathon XI at Radialpoint, I'm going through this walkthrough and code, and integrating others, to enable a proof of concept for:
+
+- Kubernetes use at rp, including resource clusters
+- Salt support of autoscaling@aws
+- kubernetes-supported docker images
+
+Despite the below claims, I couldn't get it to work as-is, as some of the assumptions are not very explicit, I've made some changes, and included them in this repo
+
+Other changes were made because I am in amazon, and this walkthrough expects bare metal machines, not vms, in an on-premise environment
+
 #SaltStack for bare metal Kubernetes on CentOS7
 
 !!!Updated for Kubernetes 1.x - See older branches if you're looking for older versions!!!
