@@ -1,0 +1,88 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=192.168.127.100@1457568421
+        Validity
+            Not Before: Mar 10 00:07:01 2016 GMT
+            Not After : Mar  8 00:07:01 2026 GMT
+        Subject: CN=kubernetes-master
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a7:62:38:1d:18:9a:7b:f8:e7:bd:99:01:1e:c3:
+                    d4:05:1e:66:1c:47:d4:33:f8:1e:a3:84:ab:2d:b7:
+                    d2:60:cf:ba:11:96:3d:b9:8a:48:f0:3b:10:18:b3:
+                    3b:af:4b:79:e0:d0:22:1f:e8:67:47:fa:ab:3a:0d:
+                    7b:af:67:17:2e:63:a5:69:09:f4:bc:f5:15:7a:3c:
+                    82:fe:36:f3:8e:55:f3:ca:20:d6:52:b6:de:23:fb:
+                    02:c7:78:02:8d:73:d0:0f:8c:01:f8:67:30:88:7c:
+                    e1:9b:5b:a8:20:57:77:95:5d:17:82:7f:a2:46:15:
+                    bd:5e:9a:40:bc:16:22:aa:88:df:ea:24:34:bc:b8:
+                    a2:68:fa:cf:41:7a:b0:7d:44:b4:3c:98:48:32:92:
+                    24:c3:15:89:f9:94:9c:37:26:63:ee:0a:52:8e:24:
+                    1a:a0:cc:93:95:19:36:50:41:7f:af:1c:1d:08:5c:
+                    8e:0c:6d:26:b9:8f:14:6c:3c:c7:4f:33:2e:9e:04:
+                    6c:f6:61:f7:85:7e:5b:02:ca:e1:3d:ac:14:32:0a:
+                    08:c2:c4:2b:78:55:9b:c8:8b:80:de:73:3a:60:23:
+                    5a:ba:0e:31:2f:98:25:f2:d1:d9:7f:7c:2b:3e:97:
+                    7e:b6:f6:d7:a8:75:60:b1:07:12:6a:7c:ff:b9:a7:
+                    e3:21
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                9C:7D:2A:77:18:9E:C4:37:8B:C7:D0:2A:92:C2:31:4F:D1:CF:A1:B1
+            X509v3 Authority Key Identifier: 
+                keyid:17:BF:DB:B6:BB:BC:86:04:57:87:89:AC:18:2B:90:E6:CA:65:60:67
+                DirName:/CN=192.168.127.100@1457568421
+                serial:9A:EF:83:D4:91:F9:1C:74
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                IP Address:192.168.127.100, IP Address:192.168.127.100, IP Address:10.0.0.1, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local
+    Signature Algorithm: sha256WithRSAEncryption
+         40:97:8e:51:2e:1b:e2:93:36:44:cb:fa:39:2a:be:ac:95:35:
+         7d:6c:b3:f7:5b:46:60:10:d5:b9:33:45:c1:3e:38:4f:9d:0c:
+         14:3a:5b:1f:a0:ec:1a:2f:d6:84:67:1f:68:3a:35:41:cc:f8:
+         6b:89:ff:4b:51:bd:81:d9:81:79:a3:60:b7:40:56:05:6e:4c:
+         12:53:b6:b5:28:77:20:b8:c9:d4:15:c3:cc:47:d2:5c:3d:19:
+         d2:a9:ac:8b:d2:31:8a:84:dd:33:5e:4e:db:b8:c4:6c:cb:7b:
+         ed:3c:4c:07:bb:00:a5:a2:13:e5:62:2e:c6:2c:06:b8:94:79:
+         8e:50:c8:dc:aa:1f:af:c3:d9:e2:2f:32:51:d8:c8:fe:b9:05:
+         3e:8a:4b:a2:bd:b6:75:dc:73:a6:c0:3f:d9:fc:6d:58:2e:96:
+         70:b9:c8:93:4a:65:db:b3:12:90:93:c5:f6:61:bb:83:f7:6a:
+         8f:3a:12:48:b1:31:94:4e:f2:5a:0f:85:37:0f:25:38:97:89:
+         29:70:5f:14:f6:35:7e:98:ad:7b:d6:4a:83:cd:b3:58:fc:04:
+         cb:41:67:12:6c:bc:46:92:7d:e2:b8:e6:fc:d2:2c:d6:17:60:
+         a1:a7:44:0a:bd:05:b2:c8:bf:7c:00:b6:a9:27:d4:74:ac:3e:
+         fd:21:83:72
+-----BEGIN CERTIFICATE-----
+MIID4DCCAsigAwIBAgIBATANBgkqhkiG9w0BAQsFADAlMSMwIQYDVQQDFBoxOTIu
+MTY4LjEyNy4xMDBAMTQ1NzU2ODQyMTAeFw0xNjAzMTAwMDA3MDFaFw0yNjAzMDgw
+MDA3MDFaMBwxGjAYBgNVBAMTEWt1YmVybmV0ZXMtbWFzdGVyMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp2I4HRiae/jnvZkBHsPUBR5mHEfUM/geo4Sr
+LbfSYM+6EZY9uYpI8DsQGLM7r0t54NAiH+hnR/qrOg17r2cXLmOlaQn0vPUVejyC
+/jbzjlXzyiDWUrbeI/sCx3gCjXPQD4wB+GcwiHzhm1uoIFd3lV0Xgn+iRhW9XppA
+vBYiqojf6iQ0vLiiaPrPQXqwfUS0PJhIMpIkwxWJ+ZScNyZj7gpSjiQaoMyTlRk2
+UEF/rxwdCFyODG0muY8UbDzHTzMungRs9mH3hX5bAsrhPawUMgoIwsQreFWbyIuA
+3nM6YCNaug4xL5gl8tHZf3wrPpd+tvbXqHVgsQcSanz/uafjIQIDAQABo4IBIjCC
+AR4wCQYDVR0TBAIwADAdBgNVHQ4EFgQUnH0qdxiexDeLx9AqksIxT9HPobEwVQYD
+VR0jBE4wTIAUF7/btru8hgRXh4msGCuQ5splYGehKaQnMCUxIzAhBgNVBAMUGjE5
+Mi4xNjguMTI3LjEwMEAxNDU3NTY4NDIxggkAmu+D1JH5HHQwEwYDVR0lBAwwCgYI
+KwYBBQUHAwEwCwYDVR0PBAQDAgWgMHkGA1UdEQRyMHCHBMCof2SHBMCof2SHBAoA
+AAGCCmt1YmVybmV0ZXOCEmt1YmVybmV0ZXMuZGVmYXVsdIIWa3ViZXJuZXRlcy5k
+ZWZhdWx0LnN2Y4Ika3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2Fs
+MA0GCSqGSIb3DQEBCwUAA4IBAQBAl45RLhvikzZEy/o5Kr6slTV9bLP3W0ZgENW5
+M0XBPjhPnQwUOlsfoOwaL9aEZx9oOjVBzPhrif9LUb2B2YF5o2C3QFYFbkwSU7a1
+KHcguMnUFcPMR9JcPRnSqayL0jGKhN0zXk7buMRsy3vtPEwHuwClohPlYi7GLAa4
+lHmOUMjcqh+vw9niLzJR2Mj+uQU+ikuivbZ13HOmwD/Z/G1YLpZwuciTSmXbsxKQ
+k8X2YbuD92qPOhJIsTGUTvJaD4U3DyU4l4kpcF8U9jV+mK171kqDzbNY/ATLQWcS
+bLxGkn3iuOb80izWF2Chp0QKvQWyyL98ALapJ9R0rD79IYNy
+-----END CERTIFICATE-----
