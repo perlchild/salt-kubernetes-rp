@@ -56,7 +56,8 @@ spec:
             memory: 50Mi
         args:
         # command = "/kube2sky"
-        - --domain=kubdomain.local
+        - --kube_master_url=http://10.111.1.201:8080
+        - --domain=ec2.internal
       - name: skydns
         image: gcr.io/google_containers/skydns:2015-10-13-8c72f8c
         resources:
@@ -72,7 +73,7 @@ spec:
         - -machines=http://127.0.0.1:4001
         - -addr=0.0.0.0:53
         - -ns-rotate=false
-        - -domain=kubdomain.local.
+        - -domain=ec2.internal.
         ports:
         - containerPort: 53
           name: dns
@@ -105,7 +106,7 @@ spec:
             cpu: 10m
             memory: 20Mi
         args:
-        - -cmd=nslookup kubernetes.default.svc.kubdomain.local 127.0.0.1 >/dev/null
+        - -cmd=nslookup kubernetes.default.svc.ec2.internal 127.0.0.1 >/dev/null
         - -port=8080
         ports:
         - containerPort: 8080
