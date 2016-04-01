@@ -1,0 +1,6 @@
+{
+  "name": "Salt-kubernetes-rp",
+  "tagline": "Gathering the code I gathered/modified for hackathon",
+  "body": "#Hackathon XI at Radialpoint, I'm going through this walkthrough and code, and integrating others, to enable a proof of concept for:\r\n\r\n- Kubernetes use at rp, including resource clusters\r\n- Salt support of autoscaling@aws\r\n- kubernetes-supported docker images\r\n\r\n \r\n  \r\n  \r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
