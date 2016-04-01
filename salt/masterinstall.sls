@@ -37,22 +37,22 @@
     - group: root
     - mode: 755
 
-#{% if salt['pillar.get']('cluster_info:com_protocol') == "https" %}
+{% if salt['pillar.get']('cluster_info:com_protocol') == "https" %}
 ##Generate certs
-#{% set master = [] -%}
-#{% for node in salt['pillar.get']('kube_nodes', {}) -%}
-#    {% do master.append(salt['pillar.get']('kube_nodes:' ~ node ~ ':ipaddress')) if salt['pillar.get']('kube_nodes:' ~ node ~ ':type') in "master" -%}
-#{% endfor %}
+{% set master = [] -%}
+{% for node in salt['pillar.get']('kube_nodes', {}) -%}
+    {% do master.append(salt['pillar.get']('kube_nodes:' ~ node ~ ':ipaddress')) if salt['pillar.get']('kube_nodes:' ~ node ~ ':type') in "master" -%}
+{% endfor %}
 
-#kube-cert:
-#  group:
-#    - present
+kube-cert:
+  group:
+    - present
 
-#gencerts:
-#  cmd:
-#    - run
-#    - name:./make-ca-cert.sh {{ master }} IP:{{ master }},IP:10.0.0.1,DNS:kubernetes,DNS:kubernetes.default,DNS:kubernetes.default.svc,DNS:kubernetes.default.svc.cluster.local
- 
+gencerts:
+  cmd:
+    - run
+    - name: ./make-ca-cert.sh {{ master }} IP:{{ master }},IP:10.111.1.201,DNS:kubernetes,DNS:kubernetes.default,DNS:kubernetes.default.svc,DNS:kubernetes.default.svc.cluster.local
+    - cwd: /etc/kubernetes/ssl
 
 #Setup the SSL directory
 /etc/kubernetes/ssl:
