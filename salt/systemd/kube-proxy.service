@@ -1,0 +1,25 @@
+{% set master = [] -%}
+{% for node in salt['pillar.get']('kube_nodes', {}) -%} 
+    {% do master.append(salt['pillar.get']('kube_nodes:' ~ node ~ ':ipaddress')) if salt['pillar.get']('kube_nodes:' ~ node ~ ':type') in "master" -%}
+{% endfor %}
+[Unit]
+Description=Kubernetes proxy server
+After=etcd.service
+After=docker.service
+Wants=etcd.service
+Wants=docker.service
+
+[Service]
+ExecStart=/opt/kubernetes/kube-proxy \
+{% if salt['pillar.get']('cluster_info:com_protocol') == "https" -%}
+--master=https://{{ master | join(',') }}:{{ salt['pillar.get']('cluster_info:api_secure_port') }} \
+--kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
+{% else -%}
+--master=http://{{ master | join(',') }}:{{ salt['pillar.get']('cluster_info:api_insecure_port') }} \
+{% endif -%}
+--logtostderr=true
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

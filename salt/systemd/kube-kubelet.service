@@ -1,0 +1,38 @@
+{% set master = [] -%}
+{% for node in salt['pillar.get']('kube_nodes', {}) -%} 
+    {% do master.append(salt['pillar.get']('kube_nodes:' ~ node ~ ':ipaddress')) if salt['pillar.get']('kube_nodes:' ~ node ~ ':type') in "master" -%}
+{% endfor %}
+[Unit]
+Description=Kubernetes Kubelet
+After=docker.service
+Wants=docker.service
+
+[Service]
+ExecStart=/opt/kubernetes/kubelet \
+--address={{ salt['pillar.get']('kube_nodes:' ~ grains['host'] ~ ':ipaddress') }} \
+--port=10250 \
+--allow-privileged=true \
+--hostname_override={{ salt['grains.get']('host') }}.{{ salt['pillar.get']('cluster_info:domainname') }} \
+--config=/etc/kubernetes/manifests \
+--cluster_dns={{ salt['pillar.get']('kube_pods:skydns:portalip') }} \
+--cluster_domain={{ salt['pillar.get']('kube_pods:skydns:dnsname') }} \
+--config=/etc/kubernetes/manifests \
+{% if salt['pillar.get']('kube_nodes:' ~grains['host'] ~':type') in "minion" -%}
+--register-node=true \
+{% if salt['pillar.get']('cluster_info:com_protocol') == "https" -%}
+--api_servers=https://{{ master | join(',') }}:{{ salt['pillar.get']('cluster_info:api_secure_port') }} \
+--kubeconfig=/etc/kubernetes/worker-kubeconfig.yaml \
+--tls-cert-file=/etc/kubernetes/ssl/kubecfg.crt \
+--tls-private-key-file=/etc/kubernetes/ssl/kubecfg.key
+{% else -%}
+--api_servers=http://{{ master | join(',') }}:{{ salt['pillar.get']('cluster_info:api_insecure_port') }} \
+{% endif -%}
+{% else -%}
+--register-node=false \
+{% endif -%}
+--logtostderr=true
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
