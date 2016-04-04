@@ -1,37 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <title>Salt-kubernetes-rp by perlchild</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Salt-kubernetes-rp by perlchild</title>
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
-
-        <header>
-          <h1>Salt-kubernetes-rp</h1>
-          <h2>Gathering the code I gathered/modified for hackathon</h2>
-        </header>
-
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/perlchild/salt-kubernetes-rp/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/perlchild/salt-kubernetes-rp/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/perlchild/salt-kubernetes-rp" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <h1>
+    <div class="wrapper">
+      <header>
+        <h1>Salt-kubernetes-rp</h1>
+        <p>Gathering the code I gathered/modified for hackathon</p>
+        <p class="view"><a href="https://github.com/perlchild/salt-kubernetes-rp">View the Project on GitHub <small>perlchild/salt-kubernetes-rp</small></a></p>
+        <ul>
+          <li><a href="https://github.com/perlchild/salt-kubernetes-rp/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/perlchild/salt-kubernetes-rp/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/perlchild/salt-kubernetes-rp">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
 <a id="hackathon-xi-at-radialpoint-im-going-through-this-walkthrough-and-code-and-integrating-others-to-enable-a-proof-of-concept-for" class="anchor" href="#hackathon-xi-at-radialpoint-im-going-through-this-walkthrough-and-code-and-integrating-others-to-enable-a-proof-of-concept-for" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hackathon XI at Radialpoint, I'm going through this walkthrough and code, and integrating others, to enable a proof of concept for:</h1>
 
 <ul>
@@ -103,62 +99,15 @@ replicationcontroller "pxc-node3" created
 
 <hr>
 
-<p>I've also tested an autoscaling policy</p>
-
-<p><code>{
-        "ScalingPolicies": [
-            {
-                "PolicyName": "WayTooSpend", 
-                "MetricAggregationType": "Maximum", 
-                "AutoScalingGroupName": "kubernetes-minion-group-us-east-1e", 
-                "PolicyARN": "arn:aws:autoscaling:us-east-1:151354380905:scalingPolicy:6f88279a-e96c-464b-a903-d1809a054c94:autoScalingGroupName/kubernetes-minion-group-us-east-1e:policyName/WayTooSpend", 
-                "PolicyType": "StepScaling", 
-                "StepAdjustments": [
-                    {
-                        "ScalingAdjustment": -1, 
-                        "MetricIntervalLowerBound": 0.0
-                    }
-                ], 
-                "AdjustmentType": "ChangeInCapacity", 
-                "Alarms": [
-                    {
-                        "AlarmName": "BillingAlarm", 
-                        "AlarmARN": "arn:aws:cloudwatch:us-east-1:151354380905:alarm:BillingAlarm"
-                    }
-                ]
-            }, 
-            {
-                "PolicyName": "cpuutil", 
-                "EstimatedInstanceWarmup": 300, 
-                "MetricAggregationType": "Average", 
-                "AutoScalingGroupName": "kubernetes-minion-group-us-east-1e", 
-                "PolicyARN": "arn:aws:autoscaling:us-east-1:151354380905:scalingPolicy:f15f4a84-e4f2-4f86-b109-2c73780eefe0:autoScalingGroupName/kubernetes-minion-group-us-east-1e:policyName/cpuutil", 
-                "PolicyType": "StepScaling", 
-                "StepAdjustments": [
-                    {
-                        "ScalingAdjustment": 1, 
-                        "MetricIntervalLowerBound": 0.0
-                    }
-                ], 
-                "AdjustmentType": "ChangeInCapacity", 
-                "Alarms": [
-                    {
-                        "AlarmName": "awsec2-kubernetes-minion-group-us-east-1e-CPU-Utilization", 
-                        "AlarmARN": "arn:aws:cloudwatch:us-east-1:151354380905:alarm:awsec2-kubernetes-minion-group-us-east-1e-CPU-Utilization"
-                    }
-                ]
-            }
-        ]
-    }</code></p>
-        </section>
-
-        <footer>
-          Salt-kubernetes-rp is maintained by <a href="https://github.com/perlchild">perlchild</a><br>
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
+<p>I've also tested an autoscaling policy
+<img src="http://perlchild.github.io/salt-kubernetes-rp/autoscaling.png" alt="I think francoisb will like this one"></p>
+      </section>
     </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/perlchild">perlchild</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
