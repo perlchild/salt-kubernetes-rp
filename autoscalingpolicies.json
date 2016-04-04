@@ -1,0 +1,45 @@
+{
+    "ScalingPolicies": [
+        {
+            "PolicyName": "WayTooSpend", 
+            "MetricAggregationType": "Maximum", 
+            "AutoScalingGroupName": "kubernetes-minion-group-us-east-1e", 
+            "PolicyARN": "arn:aws:autoscaling:us-east-1:151354380905:scalingPolicy:6f88279a-e96c-464b-a903-d1809a054c94:autoScalingGroupName/kubernetes-minion-group-us-east-1e:policyName/WayTooSpend", 
+            "PolicyType": "StepScaling", 
+            "StepAdjustments": [
+                {
+                    "ScalingAdjustment": -1, 
+                    "MetricIntervalLowerBound": 0.0
+                }
+            ], 
+            "AdjustmentType": "ChangeInCapacity", 
+            "Alarms": [
+                {
+                    "AlarmName": "BillingAlarm", 
+                    "AlarmARN": "arn:aws:cloudwatch:us-east-1:151354380905:alarm:BillingAlarm"
+                }
+            ]
+        }, 
+        {
+            "PolicyName": "cpuutil", 
+            "EstimatedInstanceWarmup": 300, 
+            "MetricAggregationType": "Average", 
+            "AutoScalingGroupName": "kubernetes-minion-group-us-east-1e", 
+            "PolicyARN": "arn:aws:autoscaling:us-east-1:151354380905:scalingPolicy:f15f4a84-e4f2-4f86-b109-2c73780eefe0:autoScalingGroupName/kubernetes-minion-group-us-east-1e:policyName/cpuutil", 
+            "PolicyType": "StepScaling", 
+            "StepAdjustments": [
+                {
+                    "ScalingAdjustment": 1, 
+                    "MetricIntervalLowerBound": 0.0
+                }
+            ], 
+            "AdjustmentType": "ChangeInCapacity", 
+            "Alarms": [
+                {
+                    "AlarmName": "awsec2-kubernetes-minion-group-us-east-1e-CPU-Utilization", 
+                    "AlarmARN": "arn:aws:cloudwatch:us-east-1:151354380905:alarm:awsec2-kubernetes-minion-group-us-east-1e-CPU-Utilization"
+                }
+            ]
+        }
+    ]
+}
